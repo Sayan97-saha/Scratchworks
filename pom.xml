@@ -1,0 +1,124 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Simple_test</groupId>
+  <artifactId>Simple_test</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Simple_test</name>
+  <description>Simple_test</description>
+  
+  <dependencies>
+  
+  <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.1.3</version>
+  </dependency>
+  
+  <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-chrome-driver</artifactId>
+    <version>4.1.3</version>
+  </dependency>
+  
+  
+  <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+  <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.2.3</version>
+  </dependency>
+
+  
+  <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+  <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-testng</artifactId>
+    <version>7.2.3</version>
+  </dependency>
+  
+  
+  <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+  <dependency>
+    <groupId>net.masterthought</groupId>
+    <artifactId>cucumber-reporting</artifactId>
+    <version>5.7.0</version>
+  </dependency>
+  
+  
+  
+  <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+  
+  </dependencies>
+  
+  	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<maven.build.timestamp.format>ddMMhhmm</maven.build.timestamp.format>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M6</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>TestNG.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>3.3.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>Simple_test</projectName>
+							<outputDirectory>Results/cucumber-report-html_${maven.build.timestamp}</outputDirectory>
+							<cucumberOutput>Results/cucumberjson/cucumber.json</cucumberOutput>
+							<parallelTesting>false</parallelTesting>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+				<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+					<dependency>
+					    <groupId>org.apache.logging.log4j</groupId>
+					    <artifactId>log4j-core</artifactId>
+					    <version>2.17.2</version>
+					</dependency>
+					
+					<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+					<dependency>
+					    <groupId>org.apache.logging.log4j</groupId>
+					    <artifactId>log4j-api</artifactId>
+					    <version>2.17.2</version>
+					</dependency>
+					
+				
+					
+					<!-- https://mvnrepository.com/artifact/javax.json/javax.json-api -->
+					<dependency>
+						<groupId>javax.json</groupId>
+						<artifactId>javax.json-api</artifactId>
+						<version>1.1.4</version>
+					</dependency>
+					
+
+				</dependencies>
+			</plugin>
+			
+  </plugins>
+  </build>
+  
+</project>
