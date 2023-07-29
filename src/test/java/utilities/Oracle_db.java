@@ -57,6 +57,7 @@ public class Oracle_db {
 		}
 		return result_data;
 	}
+	
 
 	public static void main(String[] args) throws Throwable {
 		get_details_from_db("localhost", "1522", "XE", "SYSTEM", "pdbadmin", "select * from employees");
