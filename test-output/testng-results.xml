@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-01-23T02:47:41 IST" name="Suite" finished-at="2024-01-23T02:47:41 IST" duration-ms="525">
+    <groups>
+      <group name="cucumber">
+        <method signature="cucumber_runner.scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:auto_runner.cucumber_runner@20d525]" name="scenario" class="auto_runner.cucumber_runner"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2024-01-23T02:47:41 IST" name="Test" finished-at="2024-01-23T02:47:41 IST" duration-ms="525">
+      <class name="auto_runner.cucumber_runner">
+        <test-method is-config="true" signature="set_up_class()[pri:0, instance:auto_runner.cucumber_runner@20d525]" started-at="2024-01-23T02:47:41 IST" name="set_up_class" finished-at="2024-01-23T02:47:41 IST" duration-ms="189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- set_up_class -->
+        <test-method signature="scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:auto_runner.cucumber_runner@20d525]" started-at="2024-01-23T02:47:41 IST" name="scenario" description="Runs Cucumber Feature" data-provider="features" finished-at="2024-01-23T02:47:41 IST" duration-ms="92" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Title of your scenario outline"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Title of your feature"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Unresolved compilation problem: 
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Unresolved compilation problem: 
+
+at utilities.Driver_manager.create_driver(Driver_manager.java:11)
+at glue_code.selenium_gluecode.user_is_preparing_to_test(selenium_gluecode.java:29)
+at ✽.User is preparing to test "test_1"(file:///D:/IT/java_practice/framework_build_project/test_dev_project/src/test/java/features/test_feature.feature:6)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario -->
+        <test-method is-config="true" signature="tear_down_class()[pri:0, instance:auto_runner.cucumber_runner@20d525]" started-at="2024-01-23T02:47:41 IST" name="tear_down_class" finished-at="2024-01-23T02:47:41 IST" duration-ms="201" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tear_down_class -->
+        <test-method is-config="true" signature="terminate_driver()[pri:0, instance:auto_runner.cucumber_runner@20d525]" started-at="2024-01-23T02:47:41 IST" name="terminate_driver" finished-at="2024-01-23T02:47:41 IST" duration-ms="396" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminate_driver -->
+      </class> <!-- auto_runner.cucumber_runner -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

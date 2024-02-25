@@ -19,14 +19,32 @@
 			<artifactId>ojdbc</artifactId>
 			<version>7</version>
 			<scope>system</scope>
-			<systemPath>D:/IT/java_practice/jar_files/ojdbc-7.jar</systemPath>
+			<systemPath>${ojdbc_jar_path}</systemPath>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.7.2</version>
+		</dependency>
+
+
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
+		</dependency>
+		-->
+
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.18.1</version>
 		</dependency>
 
 
@@ -93,18 +111,20 @@
 			<version>0.43.1</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/tech.tablesaw/tablesaw-core -->
-		<dependency>
-			<groupId>tech.tablesaw</groupId>
-			<artifactId>tablesaw-core</artifactId>
-			<version>0.43.1</version>
-		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/tech.tablesaw/tablesaw-excel -->
 		<dependency>
 			<groupId>tech.tablesaw</groupId>
 			<artifactId>tablesaw-excel</artifactId>
 			<version>0.43.1</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>9.0.0</version>
 		</dependency>
 
 
@@ -117,6 +137,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>19</maven.compiler.release>
 		<maven.build.timestamp.format>ddMMhhmm</maven.build.timestamp.format>
+		<ojdbc_jar_path>D:/IT/java_practice/jar_files/ojdbc-7.jar</ojdbc_jar_path>
 	</properties>
 	<build>
 		<finalName>test_project</finalName>
@@ -124,6 +145,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
 				<configuration>
 					<source>19</source>
 					<target>19</target>

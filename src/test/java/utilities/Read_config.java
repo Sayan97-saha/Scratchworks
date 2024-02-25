@@ -16,6 +16,7 @@ public class Read_config {
 			input = new FileInputStream(System.getProperty("user.dir") + "/Configuration/config.properties");
 			props.load(input);
 			res = props.getProperty(config_key);
+			System.out.println("get_from_config(" + config_key + ") = " + res);
 		}
 		catch(Exception e) {
 			e.printStackTrace();

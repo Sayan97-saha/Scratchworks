@@ -68,6 +68,19 @@ public class Oracle_db {
 	}
 	
 	
+	public static Table query_oracle_db_tbl(String hostname, String port,
+			String service_name, String username, String password, String sql_query)throws Throwable{
+		Table result_data = null;
+		try {
+			result_data = SqlResultSetReader.read(query_oracle_db(hostname, port, service_name, username, password, sql_query));
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result_data;
+	}
+	
+	
 	public static ArrayList<HashMap<String,String>> resultset_to_hashmap(ResultSet rs) throws Throwable{
 		ArrayList<HashMap<String, String>> result_data = new ArrayList<HashMap<String, String>>();
 		try {
@@ -97,7 +110,8 @@ public class Oracle_db {
 	public static void main(String[] args) throws Throwable {
 		//get_details_from_db("localhost", "1522", "XE", "SYSTEM", "pdbadmin", "select * from employees");
 		
-		Table table_data = SqlResultSetReader.read(query_oracle_db("localhost", "1522", "XE", "SYSTEM", "pdbadmin", "select * from employees"));
+		//Table table_data = SqlResultSetReader.read(query_oracle_db("localhost", "1522", "XE", "SYSTEM", "pdbadmin", "select * from employees"));
+		Table table_data = query_oracle_db_tbl("localhost", "1522", "XE", "SYSTEM", "pdbadmin", "select * from employees");
 		table_data.print();
 		System.out.println("table_data = \n" + table_data.print());
 	}

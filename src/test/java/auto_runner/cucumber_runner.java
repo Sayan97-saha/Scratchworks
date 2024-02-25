@@ -3,6 +3,7 @@ package auto_runner;
 import org.testng.annotations.*;
 
 import io.cucumber.testng.*;
+import page_validation.base_class;
 
 @CucumberOptions(
 		features = "src/test/java/features",
@@ -49,7 +50,14 @@ public class cucumber_runner {
 	@AfterSuite(alwaysRun = true)
 	public void terminate_driver() throws Throwable{
 		try {
-			Process p = Runtime.getRuntime().exec("taskkill /im chromedriver.exe -f");
+			System.out.println("Inside terminate_driver --->");
+//			String[] cmd_commands = ("cmd /c start cmd.exe /K taskkill /im chromedriver.exe -f").split(" ");
+//			Process p = Runtime.getRuntime().exec(cmd_commands);
+//			p.waitFor();
+//			p.exitValue();
+			if(base_class.driver != null) {
+				base_class.driver.quit();
+			}
 		}
 		catch(Exception e) {
 			e.printStackTrace();
